@@ -29,6 +29,11 @@ python3 -I -S -B fit_coach.py --role status \
   --file grok=tests/fixtures/grok.synthetic.json
 ```
 
+의존성 경계는 조건부입니다. live mode는 provider 사용량을 수집하기 위해 pin된
+외부 CodexBar CLI를 실행하지만, fixture/JSON mode는 collector를 우회하므로
+CodexBar 없이도 실행할 수 있습니다. CodexBar는 SMT Coach 저장소에 번들된 skill이나
+plugin이 아니라 제3자 CLI collector입니다.
+
 정확한 engine JSON과 종료 코드가 필요하면 `smt_coach.py --json`을 사용합니다.
 `HOLD`는 종료 코드 `20`, `OBSERVE`와 `ALLOW`는 `0`, 명령줄 오류는 `2`입니다.
 

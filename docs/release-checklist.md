@@ -11,6 +11,8 @@
 - [ ] policy schema boundary and stable failure precedence pass;
 - [ ] human, JSON, and exit-code parity pass;
 - [ ] synthetic collector archive checks pass;
+- [ ] the dependency boundary states that CodexBar is required for live collection only and
+      is not required by fixture/JSON mode;
 - [ ] v0.48.1 Linux/WSL and macOS platform pins and official archive shape pass;
 - [ ] macOS hosted workflow passes on arm64 (`macos-14`) and Intel (`macos-15-intel`);
 - [ ] structured collector error fixtures preserve reason/kind/code;

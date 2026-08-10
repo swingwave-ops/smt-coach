@@ -5,6 +5,13 @@
 공개 project는 clean-room source export입니다. release set은 developer working directory나
 Git history의 내용이 아니라 manifest로 정의됩니다.
 
+## 의존성 경계
+
+SMT Coach의 policy engine이 프로젝트 코드입니다. CodexBar CLI `v0.48.1`은 live
+사용량 수집에만 필요한 외부 runtime dependency입니다. Fixture/JSON mode에는 설치된
+collector가 필요하지 않습니다. CodexBar는 이 저장소에 번들된 SMT Coach skill이나
+plugin이 아니라 제3자 CLI collector입니다.
+
 collector pin에는 upstream release tag, source commit, platform별 archive hash, 추출 실행
 파일 hash, license path가 기록됩니다. 현재 platform은 Linux/WSL x86_64, macOS arm64,
 macOS x86_64입니다. 공개 policy와 collector configuration은 runtime에서 별도로 hash합니다.

@@ -10,6 +10,8 @@
 - [ ] policy schema 경계와 안정적인 failure precedence가 통과했는가;
 - [ ] human, JSON, exit-code parity가 통과했는가;
 - [ ] synthetic collector archive 검사가 통과했는가;
+- [ ] 의존성 경계에 CodexBar가 live 수집에만 필요하고 fixture/JSON mode에는
+      필요하지 않다고 명시되어 있는가;
 - [ ] v0.48.1 Linux/WSL·macOS platform pin과 공식 archive 구조가 통과했는가;
 - [ ] macOS hosted workflow가 arm64(`macos-14`)와 Intel(`macos-15-intel`)에서 통과했는가;
 - [ ] 구조화 collector error fixture가 reason/kind/code를 보존하는가;

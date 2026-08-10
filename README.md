@@ -29,6 +29,11 @@ python3 -I -S -B fit_coach.py --role status \
   --file grok=tests/fixtures/grok.synthetic.json
 ```
 
+The dependency boundary is conditional: live mode invokes the pinned external
+CodexBar CLI to collect provider usage, while fixture/JSON mode bypasses the
+collector and can run without it. CodexBar is a third-party CLI collector, not
+an SMT Coach skill or plugin bundled in this repository.
+
 Use `smt_coach.py --json` when the exact engine JSON and exit code are needed.
 `HOLD` is exit `20`; `OBSERVE` and `ALLOW` are exit `0`; command-line errors
 are exit `2`.

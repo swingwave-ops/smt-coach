@@ -6,6 +6,13 @@ The public project is a clean-room source export. The release set is defined
 by its manifest, not by the contents of a developer working directory or by a
 Git history.
 
+## Dependency boundary
+
+SMT Coach's policy engine is the project code. CodexBar CLI `v0.48.1` is an
+external runtime dependency for live usage collection only. Fixture/JSON mode
+does not require an installed collector. CodexBar is a third-party CLI
+collector, not an SMT Coach skill or plugin bundled in this repository.
+
 The collector pin records its upstream release tag, source commit, per-platform
 archive hashes, extracted executable hashes, and license path. The current
 platform set is Linux/WSL x86_64, macOS arm64, and macOS x86_64. The public
