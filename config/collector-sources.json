@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "providers": [
+    {
+      "id": "codex",
+      "enabled": true,
+      "source": "oauth",
+      "cookieSource": "off",
+      "cookieHeader": null,
+      "apiKey": null
+    },
+    {
+      "id": "claude",
+      "enabled": true,
+      "source": "oauth",
+      "cookieSource": "off",
+      "cookieHeader": null,
+      "apiKey": null
+    },
+    {
+      "id": "grok",
+      "enabled": true,
+      "source": "web",
+      "cookieSource": "off",
+      "cookieHeader": null,
+      "apiKey": null
+    }
+  ]
+}

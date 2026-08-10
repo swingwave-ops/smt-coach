@@ -1,0 +1,28 @@
+{
+  "version": "0.48.1",
+  "tag": "v0.48.1",
+  "source_commit": "226085b80f2414346624fce7a3b794bda6c54087",
+  "platforms": {
+    "linux-x86_64": {
+      "asset": "CodexBarCLI-v0.48.1-linux-x86_64.tar.gz",
+      "url": "https://github.com/steipete/CodexBar/releases/download/v0.48.1/CodexBarCLI-v0.48.1-linux-x86_64.tar.gz",
+      "sha256": "40816218c2cdf606792e69429559d54fc40244f47ab9bc3017b6ce88ec64b5d1",
+      "extracted_sha256": "2a914798540109cabba2f600a3ae4f19d8c95096ff686b346eaf4851f3078b4d"
+    },
+    "macos-arm64": {
+      "asset": "CodexBarCLI-v0.48.1-macos-arm64.tar.gz",
+      "url": "https://github.com/steipete/CodexBar/releases/download/v0.48.1/CodexBarCLI-v0.48.1-macos-arm64.tar.gz",
+      "sha256": "f41678a7258d466edc844cac3054c92549c7c61a4cbf5285969e2ba4fbf0212b",
+      "extracted_sha256": "177f55dbaf056422f0e1cad41e07a80a3c3e3a15873af05524bd31548de94180"
+    },
+    "macos-x86_64": {
+      "asset": "CodexBarCLI-v0.48.1-macos-x86_64.tar.gz",
+      "url": "https://github.com/steipete/CodexBar/releases/download/v0.48.1/CodexBarCLI-v0.48.1-macos-x86_64.tar.gz",
+      "sha256": "0bb5a8424b3b56eeb32d26119273b328dabb16f4d9c7d7ce0dfb5bd6c01fbc8a",
+      "extracted_sha256": "6f876b9f0d46d9f0920abed9720975e411bf124e74f0c32e94ab711bfa6d30cd"
+    }
+  },
+  "license": "MIT",
+  "license_path": "vendor/codexbar/LICENSE",
+  "upstream": "https://github.com/steipete/CodexBar"
+}

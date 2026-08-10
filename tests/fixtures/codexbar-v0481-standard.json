@@ -1,0 +1,20 @@
+[
+  {
+    "provider": "codex",
+    "source": "oauth",
+    "usage": {
+      "updatedAt": "2026-08-10T01:00:00Z",
+      "primary": {
+        "usedPercent": 20,
+        "windowMinutes": 10080,
+        "resetsAt": "2026-08-16T01:00:00Z"
+      },
+      "details": [
+        {
+          "title": "Provider details",
+          "rows": [{"label": "example", "value": "available"}]
+        }
+      ]
+    }
+  }
+]

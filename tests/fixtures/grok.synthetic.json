@@ -1,0 +1,13 @@
+[
+  {
+    "provider": "grok",
+    "source": "web",
+    "usage": {
+      "updatedAt": "2030-01-01T00:00:00Z",
+      "primary": {
+        "usedPercent": 5,
+        "resetsAt": "2030-01-02T00:00:00Z"
+      }
+    }
+  }
+]

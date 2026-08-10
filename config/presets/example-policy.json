@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "stale_after_seconds": 600,
+  "providers": {
+    "codex": {"enabled": true, "allowed_sources": ["oauth"]},
+    "claude": {"enabled": true, "allowed_sources": ["oauth"]},
+    "grok": {"enabled": true, "allowed_sources": ["grok-web"]}
+  },
+  "roles": {
+    "plan": {
+      "enabled": true,
+      "provider": "codex",
+      "model": "user-specified",
+      "requires": ["7d"],
+      "min_left_pct": 0
+    },
+    "implementation": {
+      "enabled": true,
+      "candidates": [
+        {"provider": "codex", "model": "user-specified", "requires": ["7d"]},
+        {"provider": "claude", "model": "user-specified", "requires": ["5h", "7d"]},
+        {"provider": "grok", "model": "user-specified", "requires": ["credits"]}
+      ],
+      "switch_margin_pct": 0
+    }
+  }
+}

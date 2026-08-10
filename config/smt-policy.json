@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "stale_after_seconds": 600,
+  "providers": {
+    "codex": {
+      "enabled": true,
+      "allowed_sources": ["oauth"]
+    },
+    "claude": {
+      "enabled": true,
+      "allowed_sources": ["oauth"]
+    },
+    "grok": {
+      "enabled": true,
+      "allowed_sources": ["grok-web"]
+    }
+  },
+  "roles": {
+    "plan": {
+      "enabled": false,
+      "disabled_reason": "policy_required"
+    },
+    "implementation": {
+      "enabled": false,
+      "disabled_reason": "policy_required"
+    },
+    "verification": {
+      "enabled": false,
+      "disabled_reason": "policy_required"
+    },
+    "research": {
+      "enabled": false,
+      "disabled_reason": "policy_required"
+    },
+    "secondary_audit": {
+      "enabled": false,
+      "disabled_reason": "policy_required"
+    }
+  }
+}

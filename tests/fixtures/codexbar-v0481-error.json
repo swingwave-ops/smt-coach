@@ -1,0 +1,11 @@
+[
+  {
+    "error": {
+      "kind": "provider",
+      "message": "Codex returned invalid data: codex app-server closed stdout",
+      "code": 1
+    },
+    "source": "cli",
+    "provider": "codex"
+  }
+]

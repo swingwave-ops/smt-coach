@@ -1,0 +1,15 @@
+[
+  {
+    "provider": "codex",
+    "source": "oauth",
+    "usage": {
+      "updatedAt": "2026-08-10T01:00:00Z",
+      "details": [
+        {
+          "title": "Provider details",
+          "rows": [{"label": "weekly", "value": "80% remaining"}]
+        }
+      ]
+    }
+  }
+]

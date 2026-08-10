@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs / temp
+*.log
+*.tmp
+
+# Runtime cache — contains local absolute paths; never committed.
+cache/
+
+# Managed CodexBar collector install.
+# Binaries, version directories, and staging output are never committed.
+# Only the pin metadata and the upstream license are tracked.
+vendor/codexbar/*
+!vendor/codexbar/LICENSE
+!vendor/codexbar/PINNED.json
+vendor/codexbar/.staging-*
