@@ -1,5 +1,7 @@
 # Threat model
 
+[한국어판](ko/threat-model.md)
+
 ## Assets
 
 - provider usage snapshots;

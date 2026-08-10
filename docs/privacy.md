@@ -1,5 +1,7 @@
 # Privacy boundary
 
+[한국어판](ko/privacy.md)
+
 SMT Coach is a local read-only advisor. It receives normalized usage output
 from the configured collector and prints a recommendation. It does not upload
 usage data, inspect browser cookies, read API keys, or print OAuth tokens.

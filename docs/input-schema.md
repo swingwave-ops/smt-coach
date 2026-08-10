@@ -1,5 +1,7 @@
 # Input schema
 
+[한국어판](ko/input-schema.md)
+
 Each provider fixture is a JSON object or an array with exactly one object for
 that provider:
 

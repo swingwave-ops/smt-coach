@@ -1,5 +1,7 @@
 # Release checklist
 
+[한국어판](ko/release-checklist.md)
+
 ## Local candidate
 
 - [ ] public tests pass and the new count is recorded;

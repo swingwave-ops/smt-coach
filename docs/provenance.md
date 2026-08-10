@@ -1,5 +1,7 @@
 # Provenance
 
+[한국어판](ko/provenance.md)
+
 The public project is a clean-room source export. The release set is defined
 by its manifest, not by the contents of a developer working directory or by a
 Git history.

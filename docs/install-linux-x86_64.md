@@ -1,5 +1,7 @@
 # Linux/WSL x86_64 installation
 
+[한국어판](ko/install-linux-x86_64.md)
+
 The supported Linux path is x86_64 with Python 3.11 or newer. This includes
 Ubuntu under WSL. The Python code has no third-party package dependency.
 

@@ -1,5 +1,7 @@
 # Public distribution
 
+[한국어판](ko/public-distribution.md)
+
 The public artifact is a clean source release. It contains Python source,
 strict configuration, synthetic fixtures, tests, documentation, license files,
 and collector pin metadata. It does not contain the collector binary, account

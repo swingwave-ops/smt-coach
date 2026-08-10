@@ -1,5 +1,7 @@
 # Verification handoff
 
+[한국어판](ko/verification-handoff.md)
+
 This document is a template for an independent review of a frozen public
 source tree. It is not an approval by itself.
 

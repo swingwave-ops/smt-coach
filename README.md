@@ -1,5 +1,7 @@
 # SMT Coach
 
+[한국어 README](README.ko.md)
+
 SMT Coach is a read-only usage advisor for Codex, Claude, and Grok. It reads
 normalized usage snapshots and returns either `OBSERVE`, `ALLOW`, or a stable
 `HOLD` reason. It never starts a model, changes a provider, installs a hook, or

@@ -1,5 +1,7 @@
 # macOS installation
 
+[한국어판](ko/install-macos.md)
+
 SMT Coach supports macOS 14+ through the pinned CodexBar CLI assets for both
 Apple Silicon (`macos-arm64`) and Intel (`macos-x86_64`). The platform manager
 selects the matching asset and validates its archive SHA-256 and extracted
