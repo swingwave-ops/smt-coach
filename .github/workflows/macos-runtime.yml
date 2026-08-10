@@ -42,6 +42,12 @@ jobs:
           uname -m
           python3 --version
 
+      - name: Run hermetic public tests
+        run: |
+          PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests
+          python3 -B scripts/validate_public_manifest.py
+          python3 -B scripts/scan_public_release.py
+
       - name: Resolve pinned CodexBar asset
         env:
           PLATFORM: ${{ matrix.platform }}
@@ -81,12 +87,6 @@ jobs:
           executable="vendor/codexbar/0.48.1-${PLATFORM}/CodexBarCLI"
           test -x "$executable"
           "$executable" --version | grep -Fx 'CodexBar 0.48.1'
-
-      - name: Run hermetic public tests
-        run: |
-          PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests
-          python3 -B scripts/validate_public_manifest.py
-          python3 -B scripts/scan_public_release.py
 
       - name: Confirm tracked tree is unchanged
         run: git diff --exit-code
