@@ -58,7 +58,7 @@ jobs:
           with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
               env.write(f"ARCHIVE_NAME={entry['asset']}\n")
               env.write(f"ARCHIVE_URL={entry['url']}\n")
-              env.write(f"ARCHIVE_SHA256={entry['archive_sha256']}\n")
+              env.write(f"ARCHIVE_SHA256={entry['sha256']}\n")
               env.write(f"ARCHIVE_PATH={os.environ['RUNNER_TEMP']}/{entry['asset']}\n")
           PY
 
