@@ -1,0 +1,96 @@
+name: macOS runtime
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/macos-runtime.yml"
+      - "fit_coach.py"
+      - "smt_coach.py"
+      - "smt"
+      - "config/**"
+      - "scripts/**"
+      - "tests/**"
+      - "vendor/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  runtime:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: macOS arm64
+            os: macos-14
+            platform: macos-arm64
+          - name: macOS x86_64
+            os: macos-15-intel
+            platform: macos-x86_64
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Inspect hosted runner
+        run: |
+          sw_vers
+          uname -m
+          python3 --version
+
+      - name: Resolve pinned CodexBar asset
+        env:
+          PLATFORM: ${{ matrix.platform }}
+        run: |
+          python3 - "$PLATFORM" <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import sys
+
+          platform_id = sys.argv[1]
+          pin = json.loads(Path("vendor/codexbar/PINNED.json").read_text(encoding="utf-8"))
+          entry = pin["platforms"][platform_id]
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
+              env.write(f"ARCHIVE_NAME={entry['asset']}\n")
+              env.write(f"ARCHIVE_URL={entry['url']}\n")
+              env.write(f"ARCHIVE_SHA256={entry['archive_sha256']}\n")
+              env.write(f"ARCHIVE_PATH={os.environ['RUNNER_TEMP']}/{entry['asset']}\n")
+          PY
+
+      - name: Download and verify pinned archive
+        env:
+          PLATFORM: ${{ matrix.platform }}
+        run: |
+          curl --fail --location --retry 3 --silent --show-error \
+            --output "$ARCHIVE_PATH" "$ARCHIVE_URL"
+          printf '%s  %s\n' "$ARCHIVE_SHA256" "$ARCHIVE_PATH" | shasum -a 256 -c -
+          python3 -B scripts/manage_codexbar.py verify \
+            --archive "$ARCHIVE_PATH" --platform "$PLATFORM"
+
+      - name: Install and verify managed collector
+        env:
+          PLATFORM: ${{ matrix.platform }}
+        run: |
+          python3 -B scripts/manage_codexbar.py install --archive "$ARCHIVE_PATH"
+          python3 -B scripts/manage_codexbar.py verify
+          executable="vendor/codexbar/0.48.1-${PLATFORM}/CodexBarCLI"
+          test -x "$executable"
+          "$executable" --version | grep -Fx 'CodexBar 0.48.1'
+
+      - name: Run hermetic public tests
+        run: |
+          PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests
+          python3 -B scripts/validate_public_manifest.py
+          python3 -B scripts/scan_public_release.py
+
+      - name: Confirm tracked tree is unchanged
+        run: git diff --exit-code
+
+      - name: Remove managed collector
+        if: always()
+        run: python3 -B scripts/manage_codexbar.py remove

@@ -11,6 +11,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_FILES = (
     ".gitignore",
+    ".github/workflows/macos-runtime.yml",
     "LICENSE",
     "README.md",
     "THIRD_PARTY_NOTICES.md",

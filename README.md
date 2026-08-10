@@ -84,6 +84,11 @@ explicit `--allow-network` option only when the pinned release is intentionally
 being installed. The manager does not read, copy, or remove account files,
 tokens, cookies, API keys, or other installations.
 
+The public repository also runs [`.github/workflows/macos-runtime.yml`](.github/workflows/macos-runtime.yml)
+on GitHub-hosted `macos-14` (Apple Silicon arm64) and `macos-15-intel` (Intel)
+runners. It verifies the pinned archive, install/verify/version/remove lifecycle,
+and hermetic tests without OAuth credentials or live provider calls.
+
 ## Safety contract
 
 - Provider sources are fixed to OAuth for Codex and Claude, and the public web

@@ -10,6 +10,7 @@
 - [ ] human, JSON, and exit-code parity pass;
 - [ ] synthetic collector archive checks pass;
 - [ ] v0.48.1 Linux/WSL and macOS platform pins and official archive shape pass;
+- [ ] macOS hosted workflow passes on arm64 (`macos-14`) and Intel (`macos-15-intel`);
 - [ ] structured collector error fixtures preserve reason/kind/code;
 - [ ] source and target hashes are frozen;
 - [ ] independent verification is recorded.
